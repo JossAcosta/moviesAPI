@@ -1,4 +1,4 @@
-const { moviesMock } = require('../utils/mock/movies');
+const { moviesMock } = require('..//utils/mocks/movies');
 
 class MoviesService {
     async getMovies() {

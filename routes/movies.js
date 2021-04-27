@@ -1,5 +1,4 @@
 const express = require('express');
-// const { moviesMock } = require('../utils/mocks/movies');
 const MoviesService = require('../services/movies');
 
 function moviesApi(app){
@@ -63,8 +62,9 @@ function moviesApi(app){
         }
     });
     router.delete("/:movieId", async function(req, res, next) {
+        const { movieId } = req.params;
         try {
-            const deletedMovie = await Promise.resolve(moviesMock[0].id);
+            const deletedMovie = await moviesService.deleteMovie({ movieId });
 
             res.status(200).json({
                 data:deletedMovie,
