@@ -15,7 +15,7 @@ class MoviesService {
         const movie = await this.mongodb.get(this.collection, movieId);
         return movie;
     }
-    async cretateMovie({ movie }) {
+    async createMovie({ movie }) {
         const cretatedMovieId= await this.mongodb.create(this.collection,movie)
         return cretatedMovieId || {};
     }
